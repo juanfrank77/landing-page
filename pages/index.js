@@ -1,65 +1,65 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import CopySection from "../components/CopySection";
+import FeaturesSection from "../components/FeaturesSection";
+import NewsletterSection from "../components/NewsletterSection";
+import Footer from "../components/Footer";
 
-export default function Home() {
+function IndexPage() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Landing Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <Navbar
+        color="white"
+        spaced={true}
+        logo="/startup-logo.png"
+      />
+      <HeroSection
+        color="primary"
+        size="medium"
+        backgroundImage="https://images.unsplash.com/photo-1553524913-efba3f0b533e"
+        backgroundImageOpacity={0.3}
+        title="'Staying relevant in tech while having a healthy life is so easy'"
+        subtitle="Said no one ever right? But even though is far from easy, it's still possible. And with the right tools and support it's even more possible now. "
+      />
+      <CopySection />
+      <FeaturesSection
+        color="light"
+        size="medium"
+        backgroundImage=""
+        backgroundImageOpacity={1}
+        title="What's in it for me?"
+        subtitle="Here's what we're aiming for."
+        columns={2}
+      />
+      <NewsletterSection
+        color="white"
+        size="medium"
+        backgroundImage=""
+        backgroundImageOpacity={1}
+        title="Want to join the club?"
+        subtitle="Get updates and actionable insights along the way."
+        buttonText="Send me the goods!"
+        buttonColor="primary"
+        buttonInverted={false}
+        inputPlaceholder="Your email here"
+        subscribedMessage="Congrats. You are now in!"
+      />
+      <Footer
+        color="light"
+        size="normal"
+        backgroundImage=""
+        backgroundImageOpacity={1}
+        copyright="© 2021"
+        logo="/startup-logo.png"
+      />
+    </>
+  );
 }
+
+export default IndexPage;
